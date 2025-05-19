@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Article</title>
+</head>
+<body>
+  <div id="article-content"></div>
+
+  <div id="comment-section">
+    <h3>Comments</h3>
+    <div id="comments"></div>
+
+    <form id="comment-form" style="display:none;">
+      <textarea name="content" required placeholder="Write a comment..."></textarea>
+      <button>Post Comment</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    const articleId = new URLSearchParams(window.location.search).get('id');
+    loadArticle(articleId);
+  </script>
+</body>
+</html>

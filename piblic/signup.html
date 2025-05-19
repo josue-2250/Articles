@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+</head>
+<body>
+  <h2>Sign Up</h2>
+  <form id="signup-form">
+    <input name="username" placeholder="Username" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <button>Sign Up</button>
+  </form>
+  <p id="error-msg"></p>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const res = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          username: form.username.value,
+          password: form.password.value
+        })
+      });
+      if (res.ok) {
+        window.location.href = 'login.html';
+      } else {
+        document.getElementById('error-msg').textContent = 'Signup failed (user may exist)';
+      }
+    });
+  </script>
+</body>
+</html>

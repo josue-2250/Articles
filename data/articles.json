@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "title": "Seed Article One",
+    "content": "This is a seeded article.",
+    "author": "admin",
+    "comments": [
+      {
+        "id": "c1",
+        "author": "admin",
+        "content": "Admin first comment!"
+      }
+    ]
+  }
+]
